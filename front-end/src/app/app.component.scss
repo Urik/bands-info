@@ -1,3 +1,13 @@
+$jumboVerticalPadding: 10px;
+$jumboHorizontalPadding: 13px;
+
 .test {
     background-color: red;
+}
+
+.jumbotron {
+    padding-top: $jumboVerticalPadding;
+    padding-bottom: $jumboVerticalPadding + 4px;
+    padding-left: $jumboHorizontalPadding;
+    padding-right: $jumboHorizontalPadding;
 }

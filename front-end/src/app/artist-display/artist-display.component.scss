@@ -1,0 +1,52 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.bio {
+    margin-top: 15px;
+    padding: 20px 25px;
+    background-color: #777AE3;
+    
+    @include media-breakpoint-up(md) {
+        margin-top: 0px;
+    }
+}
+
+.cards-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card-image-parent {
+    max-height: 300px;
+    overflow: hidden;
+
+    .card-img-top {
+        // transform: translateY(-20%);
+        @include media-breakpoint-up(md) {
+            transform: translateY(0);
+        }
+    }
+}
+
+section:not(:first-child) {
+    margin-top: 10px;
+}
+
+
+.similar-artist {
+    margin-bottom: 10px;
+}

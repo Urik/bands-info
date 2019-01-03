@@ -1,0 +1,2 @@
+<div class="expandable-text" *ngIf="wordCount > maxWords && !isExpanded">{{ content | textEllipser:maxWords }} <span class="read-more-button" (click)="expandContent()">Read more</span></div>
+<span *ngIf="wordCount <= maxWords || isExpanded">{{ content }}</span>

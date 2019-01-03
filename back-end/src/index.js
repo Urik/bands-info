@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.get('/band/:bandName', async (req, res, next) => {
+app.get('/api/band/:bandName', async (req, res, next) => {
     const bandData = await bandInfoGetter.getBandInfo(req.params.bandName);
     res.json(bandData);
     res.end();

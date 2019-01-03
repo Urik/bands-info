@@ -1,0 +1,41 @@
+<div *ngIf="artist">
+  <section class="artist-section">
+    <div class="row">
+      <div class="col-md-3 col-12 text-center">
+        <img *ngIf="artist.image" [src]="artist.image.url" class="img-fluid">
+      </div>
+      <div class="col-md-9 col-12">
+        <div class="bio">
+          <h1>{{ artist.name }}</h1>
+          <div class="bio-content">
+            <expandable-text [maxWords]="30" [content]="artist.bio.content" [isExpanded]="isTextExpanded" (onExpand)="expandText()"></expandable-text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="row">
+      <div class="col">
+          <h2>Similar artists</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col cards-container">
+        <div class="card" *ngFor="let similarArtist of artist.similarArtists">
+          <div class="card-image-parent">
+            <img [src]="similarArtist.image.url" [alt]="similarArtist.name" class="card-img-top">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{similarArtist.name}}</h5>
+            <p class="card-text" *ngIf="similarArtist.observableBio | async as bio">
+              {{ bio.summary || bio.content |  textEllipser:30}}
+            </p>
+            <a routerLink="/band/{{similarArtist.name}}" class="btn btn-primary">Go to artist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
