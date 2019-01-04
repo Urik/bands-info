@@ -10,7 +10,7 @@ export class ArtistDisplayComponent implements OnInit, OnChanges {
   @Input() artist: Artist;
 
   isTextExpanded = false;
-  imageLoaded = false;
+  _imageLoaded = false;
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +24,9 @@ export class ArtistDisplayComponent implements OnInit, OnChanges {
 
   expandText() {
     this.isTextExpanded = true;
+  }
+
+  imageLoaded() {
+    this._imageLoaded = true;
   }
 }

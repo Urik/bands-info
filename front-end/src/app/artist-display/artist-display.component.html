@@ -2,7 +2,7 @@
   <section class="artist-section">
     <div class="row">
       <div class="col-md-3 col-12 text-center">
-        <img *ngIf="artist.image" [src]="artist.image.url" class="img-fluid">
+        <img *ngIf="artist.image" [hidden]="!_imageLoaded" [src]="artist.image.url" class="img-fluid" (load)="imageLoaded()">
       </div>
       <div class="col-md-9 col-12">
         <div class="bio">
